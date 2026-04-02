@@ -5,7 +5,7 @@ const { fileUploadResponse, sheetResponse } = require("../Controllers/fileUpload
 
 const fileDestination = multer({dest:'fileUploads'});
 
-router.post("upload", fileDestination.single("file"), fileUploadResponse);
-router.post("sheet", sheetResponse);
+router.post("/upload", fileDestination.single("file"), fileUploadResponse);
+router.post("/sheet", sheetResponse);
 
 module.exports =   router
