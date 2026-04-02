@@ -5,7 +5,10 @@ const server = express();
 const fileUploads = require("./Routes/fileUpload")
 const PORT = 5000;
 
-server.use(cors());
+server.use(cors({
+    origin: "https://website-navigator-delta.vercel.app", 
+    methods: ["GET", "POST"]
+}));
 server.use(express.json()); 
 
 server.use('/',fileUploads);
