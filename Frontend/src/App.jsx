@@ -11,7 +11,10 @@ function App() {
     formData.append("file", e.target.files[0]);
 
     try {
-      const res = await axios.post("http://localhost:5000/upload", formData);
+      const res = await axios.post(
+        "https://website-navigator-kdx9.onrender.com/upload",
+        formData,
+      );
 
       setUrls(res.data.data.urls);
       setIndex(0);
@@ -22,9 +25,12 @@ function App() {
 
   const handleSheet = async () => {
     try {
-      const res = await axios.post("http://localhost:5000/sheet", {
-        url: sheetUrl,
-      });
+      const res = await axios.post(
+        "https://website-navigator-kdx9.onrender.com/sheet",
+        {
+          url: sheetUrl,
+        },
+      );
 
       setUrls(res.data.data.urls);
       setIndex(0);
