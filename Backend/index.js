@@ -11,7 +11,7 @@ server.use(cors({
 }));
 server.use(express.json()); 
 
-server.use('/',fileUploads);
+server.use('/api',fileUploads);
 
 mongoUrl = 'mongodb+srv://test:test@cluster0.pvbto6a.mongodb.net/uploads';
 

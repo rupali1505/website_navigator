@@ -12,7 +12,7 @@ function App() {
 
     try {
       const res = await axios.post(
-        "https://website-navigator-delta.vercel.app/api/upload",
+        "https://website-navigator-kdx9.onrender.com/api/upload",
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },
@@ -29,7 +29,7 @@ function App() {
   const handleSheet = async () => {
     try {
       const res = await axios.post(
-        "https://website-navigator-delta.vercel.app/api/sheet",
+        "https://website-navigator-kdx9.onrender.com/api/sheet",
         {
           url: sheetUrl,
         },
