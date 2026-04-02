@@ -1,10 +1,11 @@
 const express = require("express");
 const router = express.Router();
 const multer = require("multer");
-const { fileUploadResponse } = require("../Controllers/fileUpload.controller")
+const { fileUploadResponse, sheetResponse } = require("../Controllers/fileUpload.controller")
 
-const fileDestination = multer({dist:'fileUploads'});
+const fileDestination = multer({dest:'fileUploads'});
 
 router.post("/upload", fileDestination.single("file"), fileUploadResponse);
+router.post("/sheet", sheetResponse);
 
-module.exports = router
+module.exports =   router

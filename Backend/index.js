@@ -1,10 +1,14 @@
 const express = require("express");
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
+const cors = require("cors")
 const server = express();
+const fileUploads = require("./Routes/fileUpload")
 const PORT = 5000;
 
+server.use(cors());
+server.use(express.json()); 
 
-
+server.use('/',fileUploads);
 
 mongoUrl = 'mongodb://localhost:27017/uploads';
 

@@ -9,7 +9,15 @@ async function saveUrls(urls, source = "file") {
         throw new Error("Error saving URLs");
     }
 }
+async function getAllUrls() {
+    try {
+        return await UrlModel.find().sort({ createdAt: -1 });
+    } catch (err) {
+        throw new Error("Error fetching URLs");
+    }
+}
 
 module.exports = {
-    saveUrls
+    saveUrls,
+    getAllUrls
 }
