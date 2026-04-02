@@ -12,8 +12,9 @@ function App() {
 
     try {
       const res = await axios.post(
-        "https://website-navigator-kdx9.onrender.com/upload",
-        formData,
+        "https://website-navigator-kdx9.onrender.com/api/upload",
+        formData,{
+  headers: { "Content-Type": "multipart/form-data" }},
       );
 
       setUrls(res.data.data.urls);
@@ -26,7 +27,7 @@ function App() {
   const handleSheet = async () => {
     try {
       const res = await axios.post(
-        "https://website-navigator-kdx9.onrender.com/sheet",
+        "https://website-navigator-kdx9.onrender.com/api/sheet",
         {
           url: sheetUrl,
         },
